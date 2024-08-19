@@ -7,10 +7,15 @@ class Color {
     return `rgb(${r}, ${g}, ${b})`;
   }
 
-  testing() {
-    alert('Test Completed!');
+  hex() {
+    const { r, g, b } = this;
+    return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
+  }
+  rgba(a = 1.0) {
+    const { r, g, b } = this;
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
   }
 }
 
-const c1 = new Color(211, 244, 243);
+const c1 = new Color(255, 225, 255);
 // console.log(c1);
